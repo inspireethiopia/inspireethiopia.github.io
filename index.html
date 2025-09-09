@@ -229,9 +229,8 @@
         this.slideshowContainer.appendChild(rightContainer);
         
         setTimeout(() => {
-          // Hide and scale video
-          this.video.style.opacity = '0';
-          this.video.style.transform = 'scale(0.8)';
+          // Dim video but keep it visible
+          this.video.style.opacity = '0.3';
           
           // Both images sweep in simultaneously to meet in center
           leftContainer.style.transform = 'translateX(0)';
@@ -243,14 +242,9 @@
             rightContainer.style.transform = 'translateX(100%)';
             
             setTimeout(() => {
-              // Video sweeps back in bigger
+              // Video comes back to full brightness
               this.video.style.opacity = '1';
-              this.video.style.transform = 'scale(1.1)';
-              
-              setTimeout(() => {
-                this.video.style.transform = 'scale(1)';
-                this.isAnimating = false;
-              }, 1000);
+              this.isAnimating = false;
             }, 1000);
             
           }, 12000);

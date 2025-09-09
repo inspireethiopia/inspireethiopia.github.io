@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Inspire Ethiopia</title>
+  <style>
+    nav a {
+      color: white;
+      text-decoration: none;
+      margin: 0 8px;
+      font-weight: bold;
+      padding: 6px 12px;
+      border-radius: 6px;
+      background: #004080;
+      font-size: 0.9rem;
+      transition: background-color 0.3s ease, transform 0.2s ease;
+      display: inline-block;
+    }
+    
+    nav a:hover {
+      background: #1035AC;
+      transform: scale(1.02);
+    }
+
+    @keyframes throb {
+      0% { transform: scale(1); }
+      50% { transform: scale(1.05); }
+      100% { transform: scale(1); }
+    }
+
+    .throb-header {
+      animation: throb 2s ease-in-out infinite;
+    }
+  </style>
+</head>
+<body style="margin: 0; padding: 0; height: 100vh; display: flex; flex-direction: column; background: #0f172a; font-family: Arial, sans-serif; color: white;">
+  
+  <!-- Header -->
+  <div style="display: flex; align-items: center; justify-content: center; padding: 10px 30px; background: #1e293b; text-align: center;">
+    <img src="https://raw.githubusercontent.com/tnitkin/inspire-ethiopia-images-2/main/logo.png" style="height: 60px; margin-right: 15px; border-radius: 12px;" alt="Inspire Ethiopia Logo" />
+    <div>
+      <h1 style="color: #22c55e; margin: 0; font-size: 2rem;">Inspire Ethiopia</h1>
+      <p style="margin: 0; font-size: 0.9rem; color: #facc15; font-weight: bold;">Transforming rural education through access, qualified teachers, solar power, and data-driven innovation.</p>
+    </div>
+  </div>
+
+  <!-- Navigation -->
+  <nav style="background: #1e293b; padding: 5px; text-align: center;">
+    <a href="#">Home</a>
+    <a href="#">About</a>
+    <a href="#">Projects</a>
+    <a href="#">Gallery</a>
+    <a href="#">Donate</a>
+    <a href="#">Contact</a>
+  </nav>
+
+  <!-- Video Section -->
+  <div style="position: relative; flex: 1; overflow: hidden;">
+    <video autoplay muted loop id="heroVideo" style="width: 100%; height: 100%; object-fit: cover; transition: all 1s ease; transform: scale(1);">
+      <source src="https://raw.githubusercontent.com/tnitkin/inspire-ethiopia-images-2/main/school-video.mp4" type="video/mp4">
+      <div style="width: 100%; height: 100%; background: linear-gradient(135deg, #1e3a8a 0%, #3b82f6 100%); display: flex; align-items: center; justify-content: center; color: white; font-size: 2rem;">
+        Video Loading...
+      </div>
+    </video>
+    
+    <!-- Slideshow Container -->
+    <div id="slideshowContainer" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; display: flex; margin: 0; padding: 0; z-index: 10;">
+    </div>
+    
+    <!-- Progress Dots -->
+    <div id="progressDots" style="position: absolute; bottom: 15px; left: 50%; transform: translateX(-50%); display: flex; gap: 4px; z-index: 15;">
+    </div>
+  </div>
+
+  <!-- Mission Section -->
+  <div style="background: #1e293b; padding: 8px 15px; text-align: center;">
+    <h2 style="color: #facc15; margin: 0 0 2px 0; font-size: 20px;">Making the World a Better Place through Sustainable Education</h2>
+    <div style="color: #22c55e; font-size: 14px; margin: 0 0 2px 0; font-weight: bold;">እኛ ለኛ በኛ</div>
+    
+    <div style="position: relative; height: 50px; margin: 0 0 8px 0;">
+      <div id="missionText1" style="position: absolute; width: 45%; max-width: 350px; left: -100%; top: 50%; transform: translateY(-50%); padding: 8px 15px; border-radius: 10px; font-weight: bold; color: white; opacity: 0; transition: all 1.2s ease; background: rgba(0,0,0,0.1); font-size: 0.85rem; line-height: 1.4;">
+        Inspire Ethiopia is a 501(c)(3) nonprofit organization dedicated to improving the quality of life in rural Ethiopia through increased access to quality education, poverty alleviation, gender equality, and sustainable development.
+      </div>
+      
+      <div id="missionText2" style="position: absolute; width: 45%; max-width: 350px; right: -100%; top: 50%; transform: translateY(-50%); padding: 8px 15px; border-radius: 10px; font-weight: bold; color: white; opacity: 0; transition: all 1.2s ease; background: rgba(0,0,0,0.1); font-size: 0.85rem; line-height: 1.4;">
+        Through our innovative approach combining solar power, qualified teacher training, and data-driven solutions, we're creating lasting change in rural communities across Ethiopia.
+      </div>
+    </div>
+    
+    <div style="display: flex; justify-content: center; margin: 0 0 2px 0;">
+      <a href="#" style="padding: 8px 16px; border: 2px solid #22c55e; border-radius: 6px; font-weight: bold; text-decoration: none; background: #22c55e; color: white; font-size: 0.9rem; transition: all 0.3s ease;" onmouseover="this.style.background='#16a34a'; this.style.transform='translateY(-2px)'; this.style.boxShadow='0 4px 15px rgba(34,197,94,0.5)'" onmouseout="this.style.background='#22c55e'; this.style.transform='translateY(0)'; this.style.boxShadow='none'">DONATE</a>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <div style="background: #000; padding: 8px; text-align: center; font-size: 12px; height: 25px; display: flex; align-items: center; justify-content: center;">
+    &copy; 2025 Inspire Ethiopia | info@inspireethiopia.org
+  </div>
+
+  <script>
+    const slideData = [
+      // Set 1: Students
+      {
+        left: { topLabel: "READY TO LEARN", image: "https://raw.githubusercontent.com/tnitkin/inspire-ethiopia-images/main/ie%20pics.jpg", bottomLabel: "LOVELY STUDENTS AND THE NEXT GENERATION OF CHANGE MAKERS!" },
+        right: { topLabel: "READY TO LEARN", image: "https://raw.githubusercontent.com/tnitkin/inspire-ethiopia-images/main/ppt1_img1.jpg", bottomLabel: "LOVELY STUDENTS AND THE NEXT GENERATION OF CHANGE MAKERS!" }
+      },
+      // Set 2: Prior school transformation
+      {
+        left: { topLabel: "BEFORE", image: "https://raw.githubusercontent.com/tnitkin/inspire-ethiopia-images/main/ppt1_img2.jpg", bottomLabel: "PRIOR SCHOOL NOT FUNCTIONAL" },
+        right: { topLabel: "NEW PRIMARY SCHOOL COMPLETED", image: "https://raw.githubusercontent.com/tnitkin/inspire-ethiopia-images/main/ppt1_img5.jpg", bottomLabel: "PROVIDING ACCESS TO QUALITY EDUCATION" }
+      },
+      // Set 3: Secondary school district
+      {
+        left: { topLabel: "BEFORE", image: "https://raw.githubusercontent.com/tnitkin/inspire-ethiopia-images/main/ppt1_img1.jpg", bottomLabel: "NO SECONDARY SCHOOL IN THE ENTIRE DISTRICT" },
+        right: { topLabel: "SECONDARY SCHOOL CLASSROOMS COMPLETED", image: "https://raw.githubusercontent.com/tnitkin/inspire-ethiopia-images/main/rotate3.jpg", bottomLabel: "PROVIDING ACCESS TO QUALITY EDUCATION" }
+      },
+      // Set 4: Indoor primary school
+      {
+        left: { topLabel: "BEFORE", image: "https://raw.githubusercontent.com/tnitkin/inspire-ethiopia-images/main/ppt2_img3.jpg", bottomLabel: "NO INDOOR PRIMARY SCHOOL" },
+        right: { topLabel: "PRIMARY SCHOOL NOW COMPLETE WITH LIBRARY", image: "https://raw.githubusercontent.com/tnitkin/inspire-ethiopia-images/main/rotate7.jpg", bottomLabel: "PROVIDING THE TOOLS FOR QUALITY EDUCATION" }
+      },
+      // Set 5: Classroom transformation
+      {
+        left: { topLabel: "BEFORE", image: "https://raw.githubusercontent.com/tnitkin/inspire-ethiopia-images/main/rotate20.jpg", bottomLabel: "CLASSROOM IN NON-FUNCTIONAL PRIMARY SCHOOL" },
+        right: { topLabel: "CLASSROOM NOW", image: "https://raw.githubusercontent.com/tnitkin/inspire-ethiopia-images/main/ppt1_img12.png", bottomLabel: "PROVIDING THE TOOLS FOR QUALITY EDUCATION" }
+      },
+      // Set 6: Construction of new schools
+      {
+        left: { topLabel: "CONSTRUCTION OF NEW SCHOOLS", image: "https://raw.githubusercontent.com/tnitkin/inspire-ethiopia-images/main/rotate3.jpg", bottomLabel: "CREATING ACCESS TO MODERN EDUCATIONAL FACILITIES" },
+        right: { topLabel: "CONSTRUCTION OF NEW SCHOOLS", image: "https://raw.githubusercontent.com/tnitkin/inspire-ethiopia-images/main/rotate4.jpg", bottomLabel: "CREATING ACCESS TO MODERN EDUCATIONAL FACILITIES" }
+      },
+      // Set 7: Primary school completed
+      {
+        left: { topLabel: "PRIMARY SCHOOL COMPLETED", image: "https://raw.githubusercontent.com/tnitkin/inspire-ethiopia-images/main/rotate6.jpg", bottomLabel: "CREATING ACCESS TO MODERN EDUCATIONAL FACILITIES" },
+        right: { topLabel: "PRIMARY SCHOOL COMPLETED", image: "https://raw.githubusercontent.com/tnitkin/inspire-ethiopia-images/main/rotate7.jpg", bottomLabel: "MODERN FACILITIES WITH ALL AMENITIES" }
+      },
+      // Set 8: Teacher training
+      {
+        left: { topLabel: "CONTINUING EDUCATION OF TEACHERS", image: "https://raw.githubusercontent.com/tnitkin/inspire-ethiopia-images/main/ppt1_img4.jpg", bottomLabel: "EQUIPING TEACHERS TO PROVIDE QUALITY EDUCATION" },
+        right: { topLabel: "CONTINUING EDUCATION OF TEACHERS", image: "https://raw.githubusercontent.com/tnitkin/inspire-ethiopia-images/main/ppt2_img11.png", bottomLabel: "EQUIPING TEACHERS TO PROVIDE QUALITY EDUCATION" }
+      },
+      // Set 9: Library and computer lab
+      {
+        left: { topLabel: "NEW LIBRARY/STUDY ROOM", image: "https://raw.githubusercontent.com/tnitkin/inspire-ethiopia-images/main/rotate6.jpg", bottomLabel: "PROVIDING THE TOOLS FOR QUALITY EDUCATION" },
+        right: { topLabel: "COMPUTER LAB WITH COMPUTERS", image: "https://raw.githubusercontent.com/tnitkin/inspire-ethiopia-images/main/rotate4.jpg", bottomLabel: "PROVIDING THE TOOLS FOR QUALITY EDUCATION" }
+      },
+      // Set 10: Secondary school completion
+      {
+        left: { topLabel: "SECONDARY SCHOOL CLASSROOMS COMPLETED", image: "https://raw.githubusercontent.com/tnitkin/inspire-ethiopia-images/main/ppt1_img10.png", bottomLabel: "PROVIDING ACCESS TO QUALITY EDUCATION" },
+        right: { topLabel: "TEACHERS' RESIDENCE- ATTRACTING QUALITY EDUCATORS", image: "https://raw.githubusercontent.com/tnitkin/inspire-ethiopia-images/main/ppt1_img16.png", bottomLabel: "ATTRACTING AND TREATING TEACHERS WITH RESPECT" }
+      }
+    ];
+
+    class SlideshowManager {
+      constructor() {
+        this.currentSlide = 0;
+        this.totalSlides = slideData.length;
+        this.isAnimating = false;
+        this.video = document.getElementById('heroVideo');
+        this.slideshowContainer = document.getElementById('slideshowContainer');
+        this.progressDotsContainer = document.getElementById('progressDots');
+        
+        this.init();
+      }
+      
+      init() {
+        this.createProgressDots();
+        setTimeout(() => {
+          this.startSlideshow();
+        }, 2000);
+      }
+      
+      createProgressDots() {
+        for (let i = 0; i < this.totalSlides; i++) {
+          const dot = document.createElement('div');
+          dot.style.cssText = 'width: 6px; height: 6px; border-radius: 50%; background: rgba(255,255,255,0.4); transition: background 0.3s ease;';
+          if (i === 0) dot.style.background = '#facc15';
+          this.progressDotsContainer.appendChild(dot);
+        }
+      }
+      
+      startSlideshow() {
+        this.showSlide(this.currentSlide);
+        
+        setInterval(() => {
+          if (!this.isAnimating) {
+            this.nextSlide();
+          }
+        }, 20000);
+      }
+      
+      showSlide(slideIndex) {
+        if (this.isAnimating) return;
+        this.isAnimating = true;
+        
+        this.slideshowContainer.innerHTML = '';
+        this.updateProgressDots(slideIndex);
+        
+        const slideInfo = slideData[slideIndex];
+        
+        // Create left container - starts off-screen left
+        const leftContainer = document.createElement('div');
+        leftContainer.style.cssText = 'width: 50%; height: 100%; display: flex; flex-direction: column; transform: translateX(-100%); transition: transform 1.5s cubic-bezier(0.23, 1, 0.320, 1);';
+        leftContainer.innerHTML = `
+          <div style="background: linear-gradient(45deg, #facc15, #f59e0b); color: #000; padding: 20px; text-align: center; font-weight: bold; border-bottom: 3px solid #d97706;">
+            <div style="font-size: 14px; margin-bottom: 5px;">${slideInfo.left.bottomLabel}</div>
+            <div style="font-size: 18px;">${slideInfo.left.topLabel}</div>
+          </div>
+          <img src="${slideInfo.left.image}" style="flex: 1; width: 100%; object-fit: cover;" alt="${slideInfo.left.topLabel}">
+        `;
+        
+        // Create right container - starts off-screen right
+        const rightContainer = document.createElement('div');
+        rightContainer.style.cssText = 'width: 50%; height: 100%; display: flex; flex-direction: column; transform: translateX(100%); transition: transform 1.5s cubic-bezier(0.23, 1, 0.320, 1);';
+        rightContainer.innerHTML = `
+          <div class="throb-header" style="background: linear-gradient(45deg, #22c55e, #16a34a); color: white; padding: 20px; text-align: center; font-weight: bold; border-bottom: 3px solid #059669; box-shadow: 0 2px 10px rgba(34,197,94,0.4);">
+            <div style="font-size: 14px; margin-bottom: 5px;">${slideInfo.right.bottomLabel}</div>
+            <div style="font-size: 18px;">${slideInfo.right.topLabel}</div>
+          </div>
+          <img src="${slideInfo.right.image}" style="flex: 1; width: 100%; object-fit: cover;" alt="${slideInfo.right.topLabel}">
+        `;
+        
+        this.slideshowContainer.appendChild(leftContainer);
+        this.slideshowContainer.appendChild(rightContainer);
+        
+        setTimeout(() => {
+          // Hide and scale video
+          this.video.style.opacity = '0';
+          this.video.style.transform = 'scale(0.8)';
+          
+          // Both images sweep in simultaneously to meet in center
+          leftContainer.style.transform = 'translateX(0)';
+          rightContainer.style.transform = 'translateX(0)';
+          
+          setTimeout(() => {
+            // Images sweep out simultaneously
+            leftContainer.style.transform = 'translateX(-100%)';
+            rightContainer.style.transform = 'translateX(100%)';
+            
+            setTimeout(() => {
+              // Video sweeps back in bigger
+              this.video.style.opacity = '1';
+              this.video.style.transform = 'scale(1.1)';
+              
+              setTimeout(() => {
+                this.video.style.transform = 'scale(1)';
+                this.isAnimating = false;
+              }, 1000);
+            }, 1000);
+            
+          }, 12000);
+        }, 500);
+      }
+      
+      updateProgressDots(slideIndex) {
+        const dots = this.progressDotsContainer.children;
+        for (let i = 0; i < dots.length; i++) {
+          dots[i].style.background = i === slideIndex ? '#facc15' : 'rgba(255,255,255,0.4)';
+        }
+      }
+      
+      nextSlide() {
+        this.currentSlide = (this.currentSlide + 1) % this.totalSlides;
+        this.showSlide(this.currentSlide);
+      }
+    }
+
+    class MissionTextManager {
+      constructor() {
+        this.currentText = 0;
+        this.text1 = document.getElementById('missionText1');
+        this.text2 = document.getElementById('missionText2');
+        this.init();
+      }
+      
+      init() {
+        setTimeout(() => this.startTextCycle(), 3000);
+      }
+      
+      startTextCycle() {
+        this.showText();
+        setInterval(() => this.nextText(), 9000);
+      }
+      
+      showText() {
+        const current = this.currentText === 0 ? this.text1 : this.text2;
+        current.style.left = this.currentText === 0 ? '10%' : 'auto';
+        current.style.right = this.currentText === 0 ? 'auto' : '10%';
+        current.style.opacity = '1';
+        current.style.transform = this.currentText === 0 ? 'translate(0, -50%)' : 'translate(0, -50%)';
+        
+        setTimeout(() => {
+          current.style.opacity = '0';
+          current.style.left = this.currentText === 0 ? '-100%' : 'auto';
+          current.style.right = this.currentText === 0 ? 'auto' : '-100%';
+        }, 7000);
+      }
+      
+      nextText() {
+        this.currentText = (this.currentText + 1) % 2;
+        this.showText();
+      }
+    }
+    
+    document.addEventListener('DOMContentLoaded', () => {
+      new SlideshowManager();
+      new MissionTextManager();
+    });
+  </script>
+</body>
+</html>

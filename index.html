@@ -55,15 +55,17 @@
     <a href="#">Contact</a>
   </nav>
 
-  <!-- Video Section -->
-  <div style="position: relative; flex: 1; overflow: hidden;">
+  <!-- Video Section - MUCH LARGER NOW -->
+  <div style="position: relative; flex: 3; overflow: hidden; min-height: 60vh;">
     <iframe 
-      src="https://www.youtube.com/embed/cfsIOqQzvFc?autoplay=1&mute=1&loop=1&playlist=cfsIOqQzvFc&controls=0&rel=0&modestbranding=1" 
+      src="https://www.youtube.com/embed/cfsIOqQzvFc?si=6Vm9DGmTOJIqve92&autoplay=1&mute=1&loop=1&playlist=cfsIOqQzvFc&controls=0&showinfo=0&rel=0&modestbranding=1" 
+      title="YouTube video player" 
       frameborder="0" 
-      allow="autoplay; encrypted-media" 
+      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+      referrerpolicy="strict-origin-when-cross-origin" 
       allowfullscreen
       id="heroVideo"
-      style="width: 100%; height: 100%; border: none; transition: opacity 1s ease;">
+      style="width: 100%; height: 100%; border: none; transition: all 1s ease; transform: scale(1);">
     </iframe>
     
     <!-- Slideshow Container -->
@@ -75,23 +77,25 @@
     </div>
   </div>
 
-  <!-- Mission Section -->
-  <div style="background: #1e293b; padding: 3px 10px; text-align: center;">
-    <h2 style="color: #facc15; margin: 0 0 1px 0; font-size: 16px;">Making the World a Better Place through Sustainable Education</h2>
-    <div style="color: #22c55e; font-size: 10px; margin: 0 0 1px 0; font-weight: bold;">እኛ ለኛ በኛ</div>
+  <!-- Mission Section - SMALLER NOW -->
+  <div style="background: #1e293b; padding: 15px 20px; text-align: center; flex: 1;">
+    <h2 style="color: #facc15; margin: 0 0 8px 0; font-size: 20px;">Making the World a Better Place through Sustainable Education</h2>
+    <div style="color: #22c55e; font-size: 14px; margin: 0 0 15px 0; font-weight: bold;">እኛ ለኛ በኛ</div>
     
-    <div style="position: relative; height: 25px; margin: 0 0 3px 0;">
-      <div id="missionText1" style="position: absolute; width: 65%; max-width: 500px; left: -100%; top: 50%; transform: translateY(-50%); padding: 3px 8px; border-radius: 6px; font-weight: bold; color: white; opacity: 0; transition: all 1.2s ease; background: rgba(0,0,0,0.1); font-size: 0.7rem; line-height: 1.1;">
-        Inspire Ethiopia is a 501(c)(3) nonprofit organization dedicated to improving the quality of life in rural Ethiopia<br>through increased access to quality education, poverty alleviation, gender equality, and sustainable development.
+    <div style="position: relative; height: 80px; margin: 0 0 15px 0; max-width: 1200px; margin-left: auto; margin-right: auto;">
+      <div id="missionText1" style="position: absolute; width: 45%; max-width: 500px; left: -100%; top: 0; padding: 15px 20px; border-radius: 10px; font-weight: bold; color: white; opacity: 0; transition: all 1.2s ease; background: rgba(0,0,0,0.2); font-size: 0.9rem; line-height: 1.5; text-align: left; border-left: 4px solid #22c55e;">
+        Inspire Ethiopia is a 501(c)(3) nonprofit organization dedicated to improving the quality of life in rural Ethiopia.<br><br>
+        We focus on education access, poverty alleviation, gender equality, and sustainable development.
       </div>
       
-      <div id="missionText2" style="position: absolute; width: 65%; max-width: 500px; right: -100%; top: 50%; transform: translateY(-50%); padding: 3px 8px; border-radius: 6px; font-weight: bold; color: white; opacity: 0; transition: all 1.2s ease; background: rgba(0,0,0,0.1); font-size: 0.7rem; line-height: 1.1;">
-        Through our innovative approach combining solar power, qualified teacher training, and data-driven solutions,<br>we're creating lasting change in rural communities across Ethiopia.
+      <div id="missionText2" style="position: absolute; width: 45%; max-width: 500px; right: -100%; top: 0; padding: 15px 20px; border-radius: 10px; font-weight: bold; color: white; opacity: 0; transition: all 1.2s ease; background: rgba(0,0,0,0.2); font-size: 0.9rem; line-height: 1.5; text-align: left; border-left: 4px solid #facc15;">
+        Through solar power, qualified teacher training, and data-driven solutions, we create lasting change.<br><br>
+        We empower rural communities with tools and resources to thrive and build a better future.
       </div>
     </div>
     
-    <div style="display: flex; justify-content: center; margin: 0 0 1px 0;">
-      <a href="#" style="padding: 4px 10px; border: 1px solid #22c55e; border-radius: 4px; font-weight: bold; text-decoration: none; background: #22c55e; color: white; font-size: 0.75rem; transition: all 0.3s ease;" onmouseover="this.style.background='#16a34a'; this.style.transform='translateY(-1px)'; this.style.boxShadow='0 2px 8px rgba(34,197,94,0.4)'" onmouseout="this.style.background='#22c55e'; this.style.transform='translateY(0)'; this.style.boxShadow='none'">DONATE</a>
+    <div style="display: flex; justify-content: center; margin-top: 10px;">
+      <a href="#" style="padding: 12px 24px; border: 2px solid #22c55e; border-radius: 8px; font-weight: bold; text-decoration: none; background: #22c55e; color: white; font-size: 1rem; transition: all 0.3s ease;" onmouseover="this.style.background='#16a34a'; this.style.transform='translateY(-2px)'; this.style.boxShadow='0 4px 15px rgba(34,197,94,0.5)'" onmouseout="this.style.background='#22c55e'; this.style.transform='translateY(0)'; this.style.boxShadow='none'">DONATE NOW</a>
     </div>
   </div>
 
@@ -176,8 +180,9 @@
       createProgressDots() {
         for (let i = 0; i < this.totalSlides; i++) {
           const dot = document.createElement('div');
-          dot.style.cssText = 'width: 6px; height: 6px; border-radius: 50%; background: rgba(255,255,255,0.4); transition: background 0.3s ease;';
+          dot.style.cssText = 'width: 8px; height: 8px; border-radius: 50%; background: rgba(255,255,255,0.4); transition: background 0.3s ease; cursor: pointer;';
           if (i === 0) dot.style.background = '#facc15';
+          dot.addEventListener('click', () => this.goToSlide(i));
           this.progressDotsContainer.appendChild(dot);
         }
       }
@@ -189,7 +194,13 @@
           if (!this.isAnimating) {
             this.nextSlide();
           }
-        }, 20000);
+        }, 18000);
+      }
+      
+      goToSlide(slideIndex) {
+        if (this.isAnimating || slideIndex === this.currentSlide) return;
+        this.currentSlide = slideIndex;
+        this.showSlide(this.currentSlide);
       }
       
       showSlide(slideIndex) {
@@ -205,9 +216,9 @@
         const leftContainer = document.createElement('div');
         leftContainer.style.cssText = 'width: 50%; height: 100%; display: flex; flex-direction: column; transform: translateX(-100%); transition: transform 1.5s cubic-bezier(0.23, 1, 0.320, 1);';
         leftContainer.innerHTML = `
-          <div style="background: linear-gradient(45deg, #facc15, #f59e0b); color: #000; padding: 4px 8px; text-align: center; font-weight: bold; border-bottom: 1px solid #d97706;">
-            <div style="font-size: 9px; margin-bottom: 1px;">${slideInfo.left.bottomLabel}</div>
-            <div style="font-size: 12px;">${slideInfo.left.topLabel}</div>
+          <div style="background: linear-gradient(45deg, #facc15, #f59e0b); color: #000; padding: 20px; text-align: center; font-weight: bold; border-bottom: 3px solid #d97706;">
+            <div style="font-size: 14px; margin-bottom: 5px;">${slideInfo.left.bottomLabel}</div>
+            <div style="font-size: 18px;">${slideInfo.left.topLabel}</div>
           </div>
           <img src="${slideInfo.left.image}" style="flex: 1; width: 100%; object-fit: cover;" alt="${slideInfo.left.topLabel}">
         `;
@@ -216,9 +227,9 @@
         const rightContainer = document.createElement('div');
         rightContainer.style.cssText = 'width: 50%; height: 100%; display: flex; flex-direction: column; transform: translateX(100%); transition: transform 1.5s cubic-bezier(0.23, 1, 0.320, 1);';
         rightContainer.innerHTML = `
-          <div class="throb-header" style="background: linear-gradient(45deg, #22c55e, #16a34a); color: white; padding: 4px 8px; text-align: center; font-weight: bold; border-bottom: 1px solid #059669; box-shadow: 0 1px 5px rgba(34,197,94,0.4);">
-            <div style="font-size: 9px; margin-bottom: 1px;">${slideInfo.right.bottomLabel}</div>
-            <div style="font-size: 12px;">${slideInfo.right.topLabel}</div>
+          <div class="throb-header" style="background: linear-gradient(45deg, #22c55e, #16a34a); color: white; padding: 20px; text-align: center; font-weight: bold; border-bottom: 3px solid #059669; box-shadow: 0 2px 10px rgba(34,197,94,0.4);">
+            <div style="font-size: 14px; margin-bottom: 5px;">${slideInfo.right.bottomLabel}</div>
+            <div style="font-size: 18px;">${slideInfo.right.topLabel}</div>
           </div>
           <img src="${slideInfo.right.image}" style="flex: 1; width: 100%; object-fit: cover;" alt="${slideInfo.right.topLabel}">
         `;
@@ -245,7 +256,7 @@
               this.isAnimating = false;
             }, 1000);
             
-          }, 12000);
+          }, 10000);
         }, 500);
       }
       
@@ -281,10 +292,10 @@
       
       showText() {
         const current = this.currentText === 0 ? this.text1 : this.text2;
-        current.style.left = this.currentText === 0 ? '10%' : 'auto';
-        current.style.right = this.currentText === 0 ? 'auto' : '10%';
+        current.style.left = this.currentText === 0 ? '5%' : 'auto';
+        current.style.right = this.currentText === 0 ? 'auto' : '5%';
         current.style.opacity = '1';
-        current.style.transform = this.currentText === 0 ? 'translate(0, -50%)' : 'translate(0, -50%)';
+        current.style.transform = 'translateY(0)';
         
         setTimeout(() => {
           current.style.opacity = '0';

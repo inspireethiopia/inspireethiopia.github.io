@@ -5,6 +5,12 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Inspire Ethiopia</title>
   <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    
     nav a {
       color: white;
       text-decoration: none;
@@ -55,18 +61,18 @@
     <a href="#">Contact</a>
   </nav>
 
-  <!-- Video Section - MUCH LARGER NOW -->
-  <div style="position: relative; flex: 3; overflow: hidden; min-height: 60vh;">
-    <iframe 
-      src="https://www.youtube.com/embed/cfsIOqQzvFc?si=6Vm9DGmTOJIqve92&autoplay=1&mute=1&loop=1&playlist=cfsIOqQzvFc&controls=0&showinfo=0&rel=0&modestbranding=1" 
-      title="YouTube video player" 
-      frameborder="0" 
-      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
-      referrerpolicy="strict-origin-when-cross-origin" 
-      allowfullscreen
-      id="heroVideo"
-      style="width: 100%; height: 100%; border: none; transition: all 1s ease; transform: scale(1);">
-    </iframe>
+  <!-- Video Section - FULL SCREEN WIDTH -->
+  <div style="position: relative; flex: 1; overflow: hidden; width: 100vw; left: 50%; margin-left: -50vw;">
+    <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; transform: scale(1.8); transform-origin: center;">
+      <iframe 
+        src="https://www.youtube.com/embed/cfsIOqQzvFc?autoplay=1&mute=1&loop=1&playlist=cfsIOqQzvFc&controls=0&rel=0&modestbranding=1" 
+        frameborder="0" 
+        allow="autoplay; encrypted-media" 
+        allowfullscreen
+        id="heroVideo"
+        style="position: absolute; top: 50%; left: 50%; width: 140vw; height: 78.75vw; min-height: 100%; min-width: 250vh; transform: translate(-50%, -50%); border: none; transition: opacity 1s ease;">
+      </iframe>
+    </div>
     
     <!-- Slideshow Container -->
     <div id="slideshowContainer" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; display: flex; margin: 0; padding: 0; z-index: 10;">
@@ -77,25 +83,23 @@
     </div>
   </div>
 
-  <!-- Mission Section - SMALLER NOW -->
-  <div style="background: #1e293b; padding: 15px 20px; text-align: center; flex: 1;">
-    <h2 style="color: #facc15; margin: 0 0 8px 0; font-size: 20px;">Making the World a Better Place through Sustainable Education</h2>
-    <div style="color: #22c55e; font-size: 14px; margin: 0 0 15px 0; font-weight: bold;">እኛ ለኛ በኛ</div>
+  <!-- Mission Section -->
+  <div style="background: #1e293b; padding: 3px 10px; text-align: center;">
+    <h2 style="color: #facc15; margin: 0 0 1px 0; font-size: 16px;">Making the World a Better Place through Sustainable Education</h2>
+    <div style="color: #22c55e; font-size: 14px; margin: 0 0 1px 0; font-weight: bold;">እኛ ለኛ በኛ</div>
     
-    <div style="position: relative; height: 80px; margin: 0 0 15px 0; max-width: 1200px; margin-left: auto; margin-right: auto;">
-      <div id="missionText1" style="position: absolute; width: 45%; max-width: 500px; left: -100%; top: 0; padding: 15px 20px; border-radius: 10px; font-weight: bold; color: white; opacity: 0; transition: all 1.2s ease; background: rgba(0,0,0,0.2); font-size: 0.9rem; line-height: 1.5; text-align: left; border-left: 4px solid #22c55e;">
-        Inspire Ethiopia is a 501(c)(3) nonprofit organization dedicated to improving the quality of life in rural Ethiopia.<br><br>
-        We focus on education access, poverty alleviation, gender equality, and sustainable development.
+    <div style="position: relative; height: 35px; margin: 0 0 3px 0;">
+      <div id="missionText1" style="position: absolute; width: 50%; max-width: 550px; left: -100%; top: 50%; transform: translateY(-50%); padding: 3px 8px; border-radius: 6px; font-weight: bold; color: white; opacity: 0; transition: all 1.2s ease; background: rgba(0,0,0,0.1); font-size: 0.7rem; line-height: 1.1; text-align: left;">
+        Inspire Ethiopia is a 501(c)(3) nonprofit organization dedicated to improving the quality<br>of life in rural Ethiopia through increased access to quality education, poverty alleviation,<br>gender equality, and sustainable development.
       </div>
       
-      <div id="missionText2" style="position: absolute; width: 45%; max-width: 500px; right: -100%; top: 0; padding: 15px 20px; border-radius: 10px; font-weight: bold; color: white; opacity: 0; transition: all 1.2s ease; background: rgba(0,0,0,0.2); font-size: 0.9rem; line-height: 1.5; text-align: left; border-left: 4px solid #facc15;">
-        Through solar power, qualified teacher training, and data-driven solutions, we create lasting change.<br><br>
-        We empower rural communities with tools and resources to thrive and build a better future.
+      <div id="missionText2" style="position: absolute; width: 50%; max-width: 550px; right: -100%; top: 50%; transform: translateY(-50%); padding: 3px 8px; border-radius: 6px; font-weight: bold; color: white; opacity: 0; transition: all 1.2s ease; background: rgba(0,0,0,0.1); font-size: 0.7rem; line-height: 1.1; text-align: left;">
+        Through our innovative approach combining solar power, qualified teacher training, and<br>data-driven solutions, we're creating lasting change in rural communities across Ethiopia.
       </div>
     </div>
     
-    <div style="display: flex; justify-content: center; margin-top: 5px;">
-      <a href="#" style="padding: 10px 20px; border: 2px solid #22c55e; border-radius: 6px; font-weight: bold; text-decoration: none; background: #22c55e; color: white; font-size: 0.9rem; transition: all 0.3s ease;" onmouseover="this.style.background='#16a34a'; this.style.transform='translateY(-2px)'; this.style.boxShadow='0 4px 15px rgba(34,197,94,0.5)'" onmouseout="this.style.background='#22c55e'; this.style.transform='translateY(0)'; this.style.boxShadow='none'">DONATE NOW</a>
+    <div style="display: flex; justify-content: center; margin: 0 0 1px 0;">
+      <a href="#" style="padding: 4px 10px; border: 1px solid #22c55e; border-radius: 4px; font-weight: bold; text-decoration: none; background: #22c55e; color: white; font-size: 0.75rem; transition: all 0.3s ease;" onmouseover="this.style.background='#16a34a'; this.style.transform='translateY(-1px)'; this.style.boxShadow='0 2px 8px rgba(34,197,94,0.4)'" onmouseout="this.style.background='#22c55e'; this.style.transform='translateY(0)'; this.style.boxShadow='none'">DONATE</a>
     </div>
   </div>
 
@@ -180,9 +184,8 @@
       createProgressDots() {
         for (let i = 0; i < this.totalSlides; i++) {
           const dot = document.createElement('div');
-          dot.style.cssText = 'width: 8px; height: 8px; border-radius: 50%; background: rgba(255,255,255,0.4); transition: background 0.3s ease; cursor: pointer;';
+          dot.style.cssText = 'width: 6px; height: 6px; border-radius: 50%; background: rgba(255,255,255,0.4); transition: background 0.3s ease;';
           if (i === 0) dot.style.background = '#facc15';
-          dot.addEventListener('click', () => this.goToSlide(i));
           this.progressDotsContainer.appendChild(dot);
         }
       }
@@ -194,13 +197,7 @@
           if (!this.isAnimating) {
             this.nextSlide();
           }
-        }, 18000);
-      }
-      
-      goToSlide(slideIndex) {
-        if (this.isAnimating || slideIndex === this.currentSlide) return;
-        this.currentSlide = slideIndex;
-        this.showSlide(this.currentSlide);
+        }, 20000);
       }
       
       showSlide(slideIndex) {
@@ -216,9 +213,9 @@
         const leftContainer = document.createElement('div');
         leftContainer.style.cssText = 'width: 50%; height: 100%; display: flex; flex-direction: column; transform: translateX(-100%); transition: transform 1.5s cubic-bezier(0.23, 1, 0.320, 1);';
         leftContainer.innerHTML = `
-          <div style="background: linear-gradient(45deg, #facc15, #f59e0b); color: #000; padding: 20px; text-align: center; font-weight: bold; border-bottom: 3px solid #d97706;">
-            <div style="font-size: 14px; margin-bottom: 5px;">${slideInfo.left.bottomLabel}</div>
-            <div style="font-size: 18px;">${slideInfo.left.topLabel}</div>
+          <div class="throb-header" style="background: linear-gradient(45deg, #facc15, #f59e0b); color: #000; padding: 13px 8px; text-align: center; font-weight: bold; border-bottom: 2px solid #d97706; box-shadow: 0 2px 8px rgba(245,158,11,0.4);">
+            <div style="font-size: 12px; margin-bottom: 3px;">${slideInfo.left.bottomLabel}</div>
+            <div style="font-size: 15px;">${slideInfo.left.topLabel}</div>
           </div>
           <img src="${slideInfo.left.image}" style="flex: 1; width: 100%; object-fit: cover;" alt="${slideInfo.left.topLabel}">
         `;
@@ -227,9 +224,9 @@
         const rightContainer = document.createElement('div');
         rightContainer.style.cssText = 'width: 50%; height: 100%; display: flex; flex-direction: column; transform: translateX(100%); transition: transform 1.5s cubic-bezier(0.23, 1, 0.320, 1);';
         rightContainer.innerHTML = `
-          <div class="throb-header" style="background: linear-gradient(45deg, #22c55e, #16a34a); color: white; padding: 20px; text-align: center; font-weight: bold; border-bottom: 3px solid #059669; box-shadow: 0 2px 10px rgba(34,197,94,0.4);">
-            <div style="font-size: 14px; margin-bottom: 5px;">${slideInfo.right.bottomLabel}</div>
-            <div style="font-size: 18px;">${slideInfo.right.topLabel}</div>
+          <div class="throb-header" style="background: linear-gradient(45deg, #22c55e, #16a34a); color: white; padding: 13px; text-align: center; font-weight: bold; border-bottom: 2px solid #059669; box-shadow: 0 2px 8px rgba(34,197,94,0.4);">
+            <div style="font-size: 12px; margin-bottom: 3px;">${slideInfo.right.bottomLabel}</div>
+            <div style="font-size: 15px;">${slideInfo.right.topLabel}</div>
           </div>
           <img src="${slideInfo.right.image}" style="flex: 1; width: 100%; object-fit: cover;" alt="${slideInfo.right.topLabel}">
         `;
@@ -256,7 +253,7 @@
               this.isAnimating = false;
             }, 1000);
             
-          }, 10000);
+          }, 12000);
         }, 500);
       }
       
@@ -292,10 +289,10 @@
       
       showText() {
         const current = this.currentText === 0 ? this.text1 : this.text2;
-        current.style.left = this.currentText === 0 ? '5%' : 'auto';
-        current.style.right = this.currentText === 0 ? 'auto' : '5%';
+        current.style.left = this.currentText === 0 ? '2%' : 'auto';
+        current.style.right = this.currentText === 0 ? 'auto' : '2%';
         current.style.opacity = '1';
-        current.style.transform = 'translateY(0)';
+        current.style.transform = this.currentText === 0 ? 'translate(0, -50%)' : 'translate(0, -50%)';
         
         setTimeout(() => {
           current.style.opacity = '0';
